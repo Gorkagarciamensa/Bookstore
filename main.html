@@ -1,0 +1,70 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/1aeebc6761.js" crossorigin="anonymous"></script>
+  </head>
+  <body> 
+    <div id="app" class="content">
+        <header>
+            <div class="flexbox">
+            <img class="logo" src="./IMG/sm_5abc881cb2505.png" alt="">
+          </div>
+            <div class="flexbox">
+            <div class="search-box">
+            <input type="text" class="searchBar" v-model = "search"  placeholder="Search a book">
+            
+            <a class="search-btn">
+              <i class="fas fa-search"></i>
+            </a>
+            </div>
+            
+          </div>
+        </header>
+        <div v-if ="loading" class="loader">
+           
+          </div>
+     <div class="flexbox">
+        
+          
+      <div v-for="(book, index) in filteredBooking" class="flip-card">
+          
+          
+          <div class="flip-card-inner">
+              <div class="flip-card-front">
+                
+                 <img v-bind:src="book.cover"/>
+              </div>
+              <div class="flip-card-back">
+                  
+                <h1>{{book.title}}</h1>
+                <p>{{book.description}}</p>
+                
+                <a data-fancybox = "images"  v-bind:href="book.detail" ><button class="fancybox" v-on:click="book.detail"> Show More</button></a>
+              </div>
+            </div>
+          
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+    <!-- development version, includes helpful console warnings -->
+    
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="./javascript/main.js"></script>
+    
+  </body>
+</html>
+<div >
+    
+   
